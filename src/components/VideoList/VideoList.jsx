@@ -1,24 +1,22 @@
 import "./VideoList.scss";
+import VideoItem from "../VideoItem/VideoItem"
 
-export function VideoList({ videos, handleVideoSelect }) {
-  if (!videos) {
-    return null;
-  } //DELETE THIS AND SEE WHAT HAPPENS??>?>>?>?>?>>?>?>?>>>??
+export function VideoList(props) {
+  
   return (
     <div className="video--list">
       <h3>NEXT VIDEOS</h3>
       <ul>
-        {videos.map((video) => (
-          <li key={video.id} onClick={() => handleVideoSelect(video)}>
-            <div className="video--thumbnail">
-              <img src={video.image} alt={video.title} />
-            </div>
-            <div className="video--details">
-              <h4 className="video--title">{video.title}</h4>
-              <p className="video--channel">{video.channel}</p>
-            </div>
-          </li>
-        ))}
+        {
+          props.allVideos.map((video) => (
+            <VideoItem 
+            key={video.id}
+            video={video}
+            selected={props.selectedVideo}
+            clickedVideo={props.clickedVideo}
+            />
+          ))
+        }
       </ul>
     </div>
   );

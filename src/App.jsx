@@ -2,30 +2,27 @@ import { useState } from "react";
 import "./App.scss";
 import { Header } from "./components/Header/Header.jsx";
 import { VideoList } from "./components/VideoList/VideoList";
-import { MainVideo } from "./components/MainVideo/MainVideo";
-import { Comments } from "./components/Comments/Comments.jsx";
-import videos from "./data/videos.json";
-import details from "./data/video-details.json";
+import videosData from "./data/videos.json";
+import videoDetailsData from "./data/video-details.json";
+import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(details[0]);
+  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[1]);
 
-  const handleVideoSelect = (video) => {
-    setSelectedVideo(video);
-  };
-
-  const sideVideos = videos.filter((video) => video.id !== selectedVideo.id);
-  sideVideos.unshift(selectedVideo);
+  const selectVideo = (selectedVideoId) => {
+    console.log("video selected", selectedVideoId);
+    const nextVideo = videoDetailsData.find(video => video.id === selectedVideoId);
+    setSelectedVideo(nextVideo);
+  }
 
   return (
     <>
       <Header />
-      <VideoList />
-      <MainVideo video={selectedVideo} comments={details[selectedVideo.id]} />
-      <Comments />
+      <VideoDetails currentVideo={selectedVideo} />
       <VideoList
-        videos={videos.filter((video) => video.id !== selectedVideo.id)}
-        handleVideoSelect={handleVideoSelect}
+        allVideos={videosData}
+        selectedVideo={selectedVideo}
+        clickedVideo={selectVideo}
       />
     </>
   );

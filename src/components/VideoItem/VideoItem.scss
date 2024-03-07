@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables.scss" as *;
+
+.video {
+
+    &-item {
+
+        &__thumbnail {
+
+            img {
+                width: 150px;
+                height: 100px;
+                aspect-ratio: 1;
+                border-radius: 4px;
+                background-color: $mercury;
+            }
+
+        }
+    }
+}
