@@ -1,0 +1,36 @@
+@use "../../styles/partials/variables.scss" as *;
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.video {
+
+    &--list {
+        h3 {
+            color: $silver;
+
+        }
+    }
+
+    &--thumbnail {
+        img {
+            width: 150px;
+            height: 100px;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            background-color: $mercury;
+        }
+    }
+
+    &--details {
+        padding: 0 10px;
+    }
+}

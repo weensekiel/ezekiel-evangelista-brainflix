@@ -1,4 +1,4 @@
-@use "partials/variables" as *;
+@use "../../styles/partials/variables" as *;
 
 .header {
     display: flex;
@@ -21,10 +21,13 @@
         border-radius: 4px;
         padding-left: 30px;
         background-repeat: no-repeat;
+        font-family: "Avenir";
     }
 
     &__avatar-img {
         border-radius: 50%;
+        height: 36px;
+        width: 40px;
     }
 
     &__button {
@@ -36,8 +39,6 @@
         background-image: url(../assets/images/upload.svg);
         background-repeat: no-repeat;
         margin: 10px 0;
-
-        
     }
 }
 
@@ -48,5 +49,3 @@ button:hover {
 input:active {
     border: 2px solid $brainflix-blue;
 }
-
-// input:
