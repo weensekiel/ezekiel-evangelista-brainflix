@@ -22,6 +22,7 @@ export default function VideoDetails(props) {
       </div>
         <hr />
         <p>{description}</p>
+        <h4>{comments.length} Comments</h4>
 
       <img src={props.image} alt="" />
     </div>

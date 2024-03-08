@@ -5,9 +5,10 @@ import { VideoList } from "./components/VideoList/VideoList";
 import videosData from "./data/videos.json";
 import videoDetailsData from "./data/video-details.json";
 import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
+import { CommentsForm } from "./components/Comments/CommentsForm.jsx";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[1]);
+  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
 
   const selectVideo = (selectedVideoId) => {
     console.log("video selected", selectedVideoId);
@@ -19,6 +20,7 @@ function App() {
     <>
       <Header />
       <VideoDetails currentVideo={selectedVideo} />
+      <CommentsForm />
       <VideoList
         allVideos={videosData}
         selectedVideo={selectedVideo}
