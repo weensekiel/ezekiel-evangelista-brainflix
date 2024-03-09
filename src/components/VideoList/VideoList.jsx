@@ -2,7 +2,6 @@ import "./VideoList.scss";
 import VideoItem from "../VideoItem/VideoItem"
 
 export function VideoList(props) {
-  
   return (
     <div className="video--list">
       <hr />

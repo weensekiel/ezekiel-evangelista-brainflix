@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables.scss" as *;
+
+.comment {
+    &__placeholder {
+        background-color: $mercury;
+        border-radius: 50%;
+        height: 36px;
+        width: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-weight: 600;
+    }
+
+    &__date {
+        display: flex;
+        color: $silver;
+    }
+
+    &__content-header {
+        display: flex;
+        
+    }
+}

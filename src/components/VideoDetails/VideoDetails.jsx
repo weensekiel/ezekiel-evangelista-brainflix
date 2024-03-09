@@ -1,7 +1,7 @@
 import "./VideoDetails.scss";
 
 export default function VideoDetails(props) {
-    console.log(("VideoDetails props: ", props));
+    // console.log(("VideoDetails props: ", props));
 
   const { channel, image, title, comments, likes, views, description, timestamp } = props.currentVideo;
 

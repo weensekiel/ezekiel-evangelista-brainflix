@@ -2,7 +2,7 @@ import "./VideoItem.scss";
 
 export default function VideoItem(props) {
   //   console.log("PlantItem: ", props);
-  const { video, selected, clickedVideo } = props;
+  const { video, clickedVideo } = props;
   const { image, title, channel } = video;
 
   const handleClick = () => {
