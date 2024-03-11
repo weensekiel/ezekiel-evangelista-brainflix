@@ -4,8 +4,8 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 export function Header() {
   return (
-    <header>
-      <div className="header">
+    <header className="header">
+      <div className="header__row-1">
         <img src={headerLogo} alt="BrainFlix logo" />
       </div>
       <div className="header__row-2">

@@ -12,9 +12,10 @@ export default function VideoItem(props) {
   return (
     <li className="video-item__thumbnail" onClick={handleClick}>
       <img src={image} />
-
-      {title}
-      {channel}
+      <div className="video-item__desc">
+        <p className="video-item__title">{title}</p>
+        <p>{channel}</p>
+      </div>
     </li>
   );
 }

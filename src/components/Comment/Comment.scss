@@ -21,6 +21,11 @@
 
     &__content-header {
         display: flex;
-        
+        justify-content: space-between;
+        padding-left: 3rem;
+    }
+
+    &__content {
+        padding-left: 3rem;
     }
 }

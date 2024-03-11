@@ -1,25 +1,65 @@
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
-.video {
-    &-details {
+.video-details {
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid $mercury;
+
+    @include tablet {
+        border-top: none;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+    }
 
-        &__img {
+    &--col-1 {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &--col2 {
+        @include tablet {
+            display: flex;
+            flex-direction: row; 
+        }
+    }
+
+    h4 {
+        font-weight: 600;
+    }
+
+    &__img {
+        width: 100%;
+
+        @include desktop {
             width: 100%;
+            height: 500px;
         }
+    }
 
-        &--views {
-            color: $silver
-        }
+    &--views {
+        color: $silver
+    }
 
-        &--likes {
-            color: $silver
-        }
+    &--likes {
+        color: $silver
+    }
 
-        &--time {
-            color: $silver
-        }
+    &--time {
+        color: $silver
+    }
+
+    &--views {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &--likes {
+        display: flex;
+        gap: 1rem;
     }
 }

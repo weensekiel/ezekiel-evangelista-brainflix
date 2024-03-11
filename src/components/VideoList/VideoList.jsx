@@ -5,7 +5,7 @@ export function VideoList(props) {
   return (
     <div className="video--list">
       <hr />
-      <h3>NEXT VIDEOS</h3>
+      <h4>NEXT VIDEOS</h4>
       <ul>
         {
           props.allVideos.map((video) => (

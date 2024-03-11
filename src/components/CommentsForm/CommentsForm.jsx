@@ -8,7 +8,7 @@ export function CommentsForm() {
         {/* //profile photo */}
         <img src={avatar} alt="profile avatar" className="comment-form__avatar" />
       </div>
-      <div>
+      <div className="comment-form__input">
         <label>
           JOIN THE CONVERSATION
           <input type="text" placeholder="Add a new comment" className="comment-form__box"/>
