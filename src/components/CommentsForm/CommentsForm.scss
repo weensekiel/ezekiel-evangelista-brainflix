@@ -7,6 +7,10 @@
     gap: 1rem;
     color: $silver;
 
+    @include desktop {
+        display: flex;
+    }
+
     
     &__input {
         @include tablet {
