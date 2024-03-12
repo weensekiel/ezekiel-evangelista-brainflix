@@ -12,22 +12,21 @@ li {
     align-items: center;
 }
 
-.video {
+.video-list {
+    padding: 0 16px;
 
-    &--list {
-        h4 {
-            color: $silver;
-            font-weight: 600;
-        }
+    h4 {
+        color: $silver;
+        font-weight: 600;
     }
 
     &--thumbnail {
         img {
             width: 150px;
-                height: 100px;
-                aspect-ratio: 1;
-                border-radius: 4px;
-                background-color: $mercury;
+            height: 100px;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            background-color: $mercury;
         }
     }
 

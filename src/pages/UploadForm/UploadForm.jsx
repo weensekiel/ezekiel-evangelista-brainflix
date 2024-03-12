@@ -3,28 +3,43 @@ import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 
 export function UploadForm() {
   return (
-    <div>
+    <div className="upload-form">
+      <hr />
       <h2>Upload Video</h2>
-      <p>Video Thumbnail</p>
-      <img src={thumbnail} alt="video thumbnail" />
+      <p className="upload-form__title">VIDEO THUMBNAIL</p>
+      <img
+        src={thumbnail}
+        alt="video thumbnail"
+        className="upload-form__thumbnail"
+      />
       <form action="">
-        <label htmlFor="videoTitle">TITLE YOUR VIDEO</label>
+        <label htmlFor="videoTitle" className="upload-form__title">
+          TITLE YOUR VIDEO
+        </label>
         <input
           name="videoTitle"
           type="text"
           placeholder="Add a title to your video"
+          className="upload-form__input upload-form__input-title"
         />
 
-        <label htmlFor="videoDesc">ADD A VIDEO DESCRIPTION</label>
+        <label htmlFor="videoDesc" className="upload-form__title">
+          ADD A VIDEO DESCRIPTION
+        </label>
         <input
           name="videoDesc"
           type="text"
           placeholder="Add a description to your video"
+          className="upload-form__input upload-form__input-desc"
         />
       </form>
 
-      <button>UPLOAD</button>
-      <button>CANCEL</button>
+      <button className="upload-form__button upload-form__button--upload">
+        PUBLISH
+      </button>
+      <button className="upload-form__button upload-form__button--cancel">
+        CANCEL
+      </button>
     </div>
   );
 }

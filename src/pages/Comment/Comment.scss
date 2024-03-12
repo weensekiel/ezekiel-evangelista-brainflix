@@ -1,6 +1,8 @@
 @use "../../styles/partials/variables.scss" as *;
 
 .comment {
+    padding: 0 16px;
+
     &__placeholder {
         background-color: $mercury;
         border-radius: 50%;

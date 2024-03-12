@@ -9,6 +9,7 @@ import { CommentsForm } from "./pages/CommentsForm/CommentsForm.jsx";
 import { CommentsList } from "./pages/CommentsList/CommentsList.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UploadForm } from "./pages/UploadForm/UploadForm.jsx";
+import { VideoPlayer } from "./pages/VideoPlayer/VideoPlayer.jsx";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
@@ -28,7 +29,8 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+          // <VideoPlayer />
+           <>
               <VideoDetails currentVideo={selectedVideo} />
               <CommentsForm />
               <CommentsList selectedVideo={selectedVideo} />
@@ -38,7 +40,7 @@ function App() {
                 clickedVideo={selectVideo}
               />
             </>
-          }
+        }
         />
         <Route path="/upload" element={<UploadForm />} />
         {/* Route for the upload form */}
