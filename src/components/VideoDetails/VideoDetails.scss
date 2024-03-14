@@ -14,14 +14,14 @@
         justify-content: space-between;
     }
 
-    &--col-1 {
+    &__col-1 {
         @include tablet {
             display: flex;
             flex-direction: row;
         }
     }
 
-    &--col2 {
+    &__col2 {
         @include tablet {
             display: flex;
             flex-direction: row; 
@@ -41,24 +41,24 @@
         }
     }
 
-    &--views {
+    &__views {
         color: $silver
     }
 
-    &--likes {
+    &__likes {
         color: $silver
     }
 
-    &--time {
+    &__time {
         color: $silver
     }
 
-    &--views {
+    &__views {
         display: flex;
         gap: 1rem;
     }
 
-    &--likes {
+    &__likes {
         display: flex;
         gap: 1rem;
     }

@@ -3,13 +3,16 @@ import "./Comment.scss";
 export function Comment({ comment }) {
   let { name, timestamp } = comment;
 
-  let today = new Date();
-  let yyyy = today.getFullYear();
-  let mm = today.getMonth() + 1;
-  let dd = today.getDate();
-  today = mm + "/" + dd + "/" + yyyy;
 
-  timestamp = today;
+
+  //FIX THIS SHEITTTFHSOEIFHSOEIFHOSEFH
+  // let today = new Date();
+  // let yyyy = today.getFullYear();
+  // let mm = today.getMonth() + 1;
+  // let dd = today.getDate();
+  // today = mm + "/" + dd + "/" + yyyy;
+
+  // timestamp = today;
 
   return (
     <section className="comment">

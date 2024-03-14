@@ -1,59 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import { Header } from "./components/Header/Header.jsx";
-import { VideoList } from "./pages/VideoList/VideoList.jsx";
-import videosData from "./data/videos.json";
-import videoDetailsData from "./data/video-details.json";
-import VideoDetails from "./pages/VideoDetails/VideoDetails.jsx";
-import { CommentsForm } from "./pages/CommentsForm/CommentsForm.jsx";
-import { CommentsList } from "./pages/CommentsList/CommentsList.jsx";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+import { Video } from "./pages/Video/Video.jsx";
 import { UploadForm } from "./pages/UploadForm/UploadForm.jsx";
-import { VideoPlayer } from "./pages/VideoPlayer/VideoPlayer.jsx";
+import axios from "axios";
+
+const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+const apiKey = "?api_key=ccecc0b2-411b-4d17-b94d-f6623bb9a6e7";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
+  const [data, setData] = useState(null);
 
-  const selectVideo = (selectedVideoId) => {
-    console.log("video selected", selectedVideoId);
-    const nextVideo = videoDetailsData.find(
-      (video) => video.id === selectedVideoId
-    );
-    setSelectedVideo(nextVideo);
-  };
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await axios.get(`${baseUrl}/videos${apiKey}`);
+        console.log(response.data.id);
+        setData(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getData();
+  }, []);
+
+  if (!data) {
+    return <div>loading...</div>;
+  }
 
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-          // <VideoPlayer />
-           <>
-              <VideoDetails currentVideo={selectedVideo} />
-              <CommentsForm />
-              <CommentsList selectedVideo={selectedVideo} />
-              <VideoList
-                allVideos={videosData}
-                selectedVideo={selectedVideo}
-                clickedVideo={selectVideo}
-              />
-            </>
-        }
-        />
+        <Route path="/" element={<Video data={data} />} />
+        <Route path="/videos/:videoId" element={<Video data={data} />} />
         <Route path="/upload" element={<UploadForm />} />
-        {/* Route for the upload form */}
       </Routes>
-
-      {/* <VideoDetails currentVideo={selectedVideo} />
-      <CommentsForm />
-      <CommentsList selectedVideo={selectedVideo} />
-      <VideoList
-        allVideos={videosData}
-        selectedVideo={selectedVideo}
-        clickedVideo={selectVideo}
-      /> */}
     </BrowserRouter>
   );
 }

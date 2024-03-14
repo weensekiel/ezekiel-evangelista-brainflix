@@ -36,8 +36,8 @@
         padding-left: 30px;
         background-repeat: no-repeat;
         font-family: inherit;
-
-        :active {
+        
+        :focus {
             border: 2px solid $brainflix-blue;
         }
     }
@@ -79,8 +79,4 @@
 
 button:hover {
     background-color: $brainflix-darkBlue;
-}
-
-input:active {
-    border: 2px solid $brainflix-blue;
 }
