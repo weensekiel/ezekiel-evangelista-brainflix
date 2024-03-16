@@ -1,3 +1,4 @@
+
 import { CommentsForm } from "../../components/CommentsForm/CommentsForm";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import { CommentsList } from "../../components/CommentsList/CommentsList";
@@ -8,12 +9,10 @@ import axios from "axios";
 
 export function Video(props) {
   const [selectedVideo, setSelectedVideo] = useState(null);
-
   const { data } = props;
 
   const { videoId } = useParams();
-  const id = videoId ?? data[0];
-  console.log(id);
+  const id = videoId ?? data[0].id;
 
   useEffect(() => {
     async function getVideoData() {

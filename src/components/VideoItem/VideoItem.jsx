@@ -10,7 +10,7 @@ export default function VideoItem(props) {
       <Link to={`/videos/${video.id}`}>
         <img src={image} />
       </Link>
-      <div className="video-item__desc">
+      <div className="video-item__desc hidden">
         <p className="video-item__title">{title}</p>
         <p>{channel}</p>
       </div>

@@ -5,11 +5,10 @@ export function CommentsForm() {
   return (
     <section className="comment-form">
       <div>
-        {/* //profile photo */}
         <img src={avatar} alt="profile avatar" className="comment-form__avatar" />
       </div>
       <div className="comment-form__input">
-        <label>
+        <label className="comment-form__label">
           JOIN THE CONVERSATION
           <input type="text" placeholder="Add a new comment" className="comment-form__box"/>
         </label>

@@ -1,7 +1,9 @@
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
 .comment {
     padding: 0 16px;
+    font-size: 1rem;
 
     &__placeholder {
         background-color: $mercury;
@@ -14,6 +16,7 @@
 
     &__name {
         font-weight: 600;
+        font-size: 1rem;
     }
 
     &__date {
@@ -25,9 +28,19 @@
         display: flex;
         justify-content: space-between;
         padding-left: 3rem;
+
+        @include tablet {
+            position: relative;
+            bottom: 45px;
+        }
     }
 
     &__content {
         padding-left: 3rem;
+
+        @include tablet {
+            position: relative;
+            bottom: 40px;
+        }
     }
 }

@@ -12,6 +12,9 @@
         display: flex;
     }
 
+    &__label {
+        font-size: 1rem;
+    }
     
     &__input {
         @include tablet {
@@ -34,6 +37,7 @@
         margin: 10px 0;
         border: none;
         font-family: inherit;
+        font-weight: 700;
 
         @include tablet {
             position: relative;
@@ -45,6 +49,8 @@
     &__box {
         width: 100%;
         height: 100px;
+        background-color: $alabaster;
+        border: 1px solid $mercury;
         font-family: inherit;
 
         @include tablet {

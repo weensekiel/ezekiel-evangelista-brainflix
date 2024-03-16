@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.scss";
 import { Header } from "./components/Header/Header.jsx";
-import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Video } from "./pages/Video/Video.jsx";
 import { UploadForm } from "./pages/UploadForm/UploadForm.jsx";
 import axios from "axios";
@@ -16,7 +16,6 @@ function App() {
     async function getData() {
       try {
         const response = await axios.get(`${baseUrl}/videos${apiKey}`);
-        console.log(response.data.id);
         setData(response.data);
       } catch (err) {
         console.log(err);

@@ -6,8 +6,7 @@
     
     @include tablet {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: space-around;
     }
 
 
@@ -24,11 +23,18 @@
         justify-content: space-between;
         align-items: center;
         margin: 10px 0;
+
+        @include tablet {
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+            left: 5rem;
+        }
     }
 
     &__search-bar {
         height: 40px;
-        min-width: 240px;
+        min-width: 60%;
         background-image: url(../../assets/images/search.svg);
         background-position: 10px center;
         border: 1px solid $mercury;
@@ -36,6 +42,8 @@
         padding-left: 30px;
         background-repeat: no-repeat;
         font-family: inherit;
+
+
         
         :focus {
             border: 2px solid $brainflix-blue;
@@ -49,13 +57,14 @@
 
         @include tablet {
             position: relative;
-            left: 250px;
+            left: 75px;
         }
     }
 
     &__button {
+        font-size: 1rem;
         font-family: inherit;
-        font-weight: 600;
+        font-weight: 700;
         color: $white;
         background-color: $brainflix-blue;
         height: 40px;
@@ -68,9 +77,9 @@
         margin: 10px 0;
 
         @include tablet {
-            width: 200px;
+            width: 150px;
             position: relative;
-            right: 80px;
+            right: 55px;
         }
 
 

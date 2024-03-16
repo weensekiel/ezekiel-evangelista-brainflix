@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 export function Header() {
   return (
     <header className="header">
+      
       <div className="header__row-1">
-        <Link to={"/"}>
+        <Link to="/">
           <img src={headerLogo} alt="BrainFlix logo" />
         </Link>
       </div>
@@ -22,15 +23,11 @@ export function Header() {
           className="header__avatar-img"
           src={avatar}
           alt="user avatar"
-          height={36}
-          width={36}
         />
       </div>
-      <div>
-        <Link to={"/upload"}>
+        <Link to="/upload">
           <button className="header__button">UPLOAD</button>
         </Link>
-      </div>
     </header>
   );
 }
