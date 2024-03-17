@@ -16,9 +16,18 @@
         justify-content: space-between;
     }
 
+    @include desktop {
+        width: 60%;
+    }
+
+
     &__title {
         padding: 0 16px;
         font-family: 2rem;
+
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &__col1 {
@@ -26,13 +35,21 @@
             display: flex;
             gap: 1rem;
         }
+
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &__col2 {
         @include tablet {
             display: flex;
-            flex-direction: row; 
+            flex-direction: row;
             gap: 1rem;
+        }
+
+        @include desktop {
+            width: 60%;
         }
     }
 
@@ -64,20 +81,36 @@
     &__views {
         display: flex;
         gap: 1rem;
+
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &__likes {
         display: flex;
         gap: 1rem;
+
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &__desc {
         padding: 0 16px;
         font-size: 1rem;
+
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &__comments {
         padding: 0 16px;
         font-family: 2rem;
+
+        @include desktop {
+            width: 60%;
+        }
     }
 }
