@@ -21,6 +21,10 @@ li {
         justify-content: flex-end;
     }
 
+    @include desktop {
+        display: flex;
+    }
+
     h4 {
         color: $silver;
         font-weight: 600;

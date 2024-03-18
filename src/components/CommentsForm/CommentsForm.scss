@@ -43,6 +43,10 @@
             position: relative;
             width: 250px;
         }
+
+        @include desktop {
+            width: 200px;
+        }
       
     }
 
