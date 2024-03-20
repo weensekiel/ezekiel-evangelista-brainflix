@@ -8,6 +8,7 @@ import axios from "axios";
 
 const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com";
 const apiKey = "?api_key=ccecc0b2-411b-4d17-b94d-f6623bb9a6e7";
+const serverUrl = "http://localhost:5678"
 
 function App() {
   const [data, setData] = useState(null);
@@ -15,7 +16,7 @@ function App() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await axios.get(`${baseUrl}/videos${apiKey}`);
+        const response = await axios.get(`${serverUrl}/videos`);
         setData(response.data);
       } catch (err) {
         console.log(err);
