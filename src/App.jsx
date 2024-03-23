@@ -2,13 +2,11 @@ import { useState, useEffect } from "react";
 import "./App.scss";
 import { Header } from "./components/Header/Header.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Video } from "./pages/Video/Video.jsx";
-import { UploadForm } from "./pages/UploadForm/UploadForm.jsx";
+import { VideoPage } from "./pages/VideoPage/VideoPage.jsx";
+import { UploadFormPage } from "./pages/UploadFormPage/UploadFormPage.jsx";
 import axios from "axios";
 
-const baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-const apiKey = "?api_key=ccecc0b2-411b-4d17-b94d-f6623bb9a6e7";
-const serverUrl = "http://localhost:5678"
+const serverUrl = import.meta.env.VITE_BRAINFLIX_API;
 
 function App() {
   const [data, setData] = useState(null);
@@ -33,9 +31,9 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Video data={data} />} />
-        <Route path="/videos/:videoId" element={<Video data={data} />} />
-        <Route path="/upload" element={<UploadForm />} />
+        <Route path="/" element={<VideoPage data={data} />} />
+        <Route path="/videos/:videoId" element={<VideoPage data={data} />} />
+        <Route path="/upload" element={<UploadFormPage />} />
       </Routes>
     </BrowserRouter>
   );

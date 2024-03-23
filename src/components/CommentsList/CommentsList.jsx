@@ -4,11 +4,9 @@ import { Comment } from "../Comment/Comment";
 export function CommentsList(props) {
   const { selectedVideo } = props;
 
-  
-
   return (
     <ul className="comment-list">
-      {selectedVideo.comments.map((comment) => (
+      {selectedVideo[0].comments.map((comment) => (
         <Comment key={comment.id} comment={comment} />
       ))}
     </ul>
